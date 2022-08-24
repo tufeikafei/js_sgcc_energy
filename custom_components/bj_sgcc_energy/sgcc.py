@@ -7,12 +7,12 @@ from .const import PGC_PRICE
 
 _LOGGER = logging.getLogger(__name__)
 
-AUTH_URL = "http://weixin.bj.sgcc.com.cn/ott/app/auth/authorize?target=M_WYYT"
-CONSNO_URL = "http://weixin.bj.sgcc.com.cn/ott/app/follower/bound/cons"
-REMAIN_URL = "http://weixin.bj.sgcc.com.cn/ott/app/home/getElectricBill?consNo="
-DETAIL_URL = "http://weixin.bj.sgcc.com.cn/ott/app/electric/bill/overview?consNo="
-BILLINFO_URL = "http://weixin.bj.sgcc.com.cn/ott/app/electric/bill/queryElecBillInfoEveryYear"
-DAILYBILL_URL = "http://weixin.bj.sgcc.com.cn/ott/app/electric/bill/daily"
+AUTH_URL = "http://weixin.js.sgcc.com.cn/ott/app/auth/authorize?target=M_WYYT"
+CONSNO_URL = "http://weixin.js.sgcc.com.cn/ott/app/follower/bound/cons"
+REMAIN_URL = "http://weixin.js.sgcc.com.cn/ott/app/home/getElectricBill?consNo="
+DETAIL_URL = "http://weixin.js.sgcc.com.cn/ott/app/electric/bill/overview?consNo="
+BILLINFO_URL = "http://weixin.js.sgcc.com.cn/ott/app/electric/bill/queryElecBillInfoEveryYear"
+DAILYBILL_URL = "http://weixin.js.sgcc.com.cn/ott/app/electric/bill/daily"
 
 LEVEL_CONSUME = ["levelOneSum", "levelTwoSum", "levelThreeSum"]
 LEVEL_REMAIN = ["levelOneRemain", "levelTwoRemain"]
@@ -54,7 +54,7 @@ class SGCCData:
 
     async def async_get_token(self):
         headers = {
-            "Host": "weixin.bj.sgcc.com.cn",
+            "Host": "weixin.js.sgcc.com.cn",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Upgrade-Insecure-Requests": "1",
             "Cookie": f"user_openid={self._openid}",
@@ -77,13 +77,13 @@ class SGCCData:
 
     def commonHeaders(self):
         headers = {
-            "Host": "weixin.bj.sgcc.com.cn",
+            "Host": "weixin.js.sgcc.com.cn",
             "Accept": "*/*",
             "X-Requested-With": "XMLHttpRequest",
             "Accept-Language": "zh-cn, zh-Hans; q=0.9",
             "Accept-Encoding": "gzip, deflate",
             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "http://weixin.bj.sgcc.com.cn",
+            "Origin": "http://weixin.js.sgcc.com.cn",
             "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 "
                           "(KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.7(0x1800072c) "
                           "NetType/WIFI Language/zh_CN",
